@@ -14,7 +14,7 @@ export class PortfolioInfrastructureStack extends cdk.Stack {
       sourceCodeProvider: new amplify.GitHubSourceCodeProvider ({
         owner: 'iibluearth',
         repository: 'portfolio',
-        oauthToken: cdk.SecretValue.secretsManager('github0token')
+        oauthToken: cdk.SecretValue.secretsManager('github-token')
       }),
       
       // Build Specification 
