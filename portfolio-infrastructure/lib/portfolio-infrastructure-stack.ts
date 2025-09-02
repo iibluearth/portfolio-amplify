@@ -31,13 +31,13 @@ export class PortfolioInfrastructureStack extends cdk.Stack {
             build: {
               commands: [
                 'echo "building our nextjs app..."',
-                'npm run build-and-export',
-                'echo "build is complete"'
+                'nmp run build',
+                'npm run export'
               ],
             },
           },
           artifacts: {
-            baseDirectory: 'portfolio/out',
+            baseDirectory: 'out',
             files: ['**/*'],
           },
           cache: {
