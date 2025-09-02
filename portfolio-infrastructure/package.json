@@ -5,11 +5,11 @@
     "portfolio-infrastructure": "bin/portfolio-infrastructure.js"
   },
   "scripts": {
-    "build-and-export": "next build && next export",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest",
-    "cdk": "cdk"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "build-and-export": "next build && next export"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
