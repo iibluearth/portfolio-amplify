@@ -8,7 +8,7 @@ export class PortfolioInfrastructureStack extends cdk.Stack {
 
     // Amplify Application 
     const amplifyApp = new amplify.App(this, 'PortfolioApplication', {
-      appName: 'Portfolio',
+      appName: 'Portfolio-Amplify',
 
       // Connect to my Github repo
       sourceCodeProvider: new amplify.GitHubSourceCodeProvider ({
@@ -25,19 +25,21 @@ export class PortfolioInfrastructureStack extends cdk.Stack {
             preBuild: {
               commands: [
                 'echo "starting this build"',
+                'cd portfolio',
                 'npm install'
             ],
             },
             build: {
               commands: [
                 'echo "building our nextjs app..."',
-                'nmp run build',
-                'npm run export'
+                'npm run build',
+                'npm run export',
+                'echo "build is completed'
               ],
             },
           },
           artifacts: {
-            baseDirectory: 'out',
+            baseDirectory: 'portfolio/out',
             files: ['**/*'],
           },
           cache: {
