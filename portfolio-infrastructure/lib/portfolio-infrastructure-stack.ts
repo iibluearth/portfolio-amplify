@@ -25,7 +25,6 @@ export class PortfolioInfrastructureStack extends cdk.Stack {
             preBuild: {
               commands: [
                 'echo "starting this build"',
-                'cd portfolio',
                 'npm install'
             ],
             },
@@ -33,12 +32,12 @@ export class PortfolioInfrastructureStack extends cdk.Stack {
               commands: [
                 'echo "building our nextjs app..."',
                 'npm run build-and-export',
-                'echo "build is completed'
+                'echo "build is completed"'
               ],
             },
           },
           artifacts: {
-            baseDirectory: 'portfolio/out',
+            baseDirectory: 'out',
             files: ['**/*'],
           },
           cache: {
